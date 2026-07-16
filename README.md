@@ -1,16 +1,53 @@
-# React + Vite
+# Merchant Churn Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A proactive, dynamic Merchant Churn Dashboard built for the CX AI-Proficiency Build Round. This React application helps Customer Success teams monitor merchant health, calculate churn risk in real-time based on specific signals, and determine immediate next steps.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://AshritaPandey.github.io/Swym_dashboard/](https://AshritaPandey.github.io/Swym_dashboard/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- **Dynamic Risk Scoring:** Evaluates merchants based on custom logic (Engagement Drop-off, Technical Friction, Support Frustration).
+- **Automated Next Steps:** Recommends tactical interventions based on the exact combination of risk signals triggered.
+- **Local Persistence:** Add custom merchants dynamically via the UI, and data is saved via `localStorage` directly in your browser. 
+- **Premium Theming:** Includes a fully responsive grid, smooth stagger animations, and a seamless Light/Dark mode toggle.
+- **AI Chat Assistant:** A mock contextual AI widget that parses keywords to explain the dashboard logic, features, and risk scoring to users.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 The Logic (v1 Specification)
 
-## Expanding the Oxlint configuration
+Merchants are evaluated against three key thresholds:
+1. **Engagement Drop-off:** `>= 14 Days` since the last platform login.
+2. **Technical Friction:** `>= 5.0%` API Error Rate over the last 7 days.
+3. **Support Frustration:** `>= 3` Open Support Tickets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+**Risk Tiers:**
+- 🔴 **High Risk:** 2 or more signals triggered (Action: Immediate CSM Intervention + specific tactical steps).
+- 🟡 **Medium Risk:** Exactly 1 signal triggered (Action: Signal-specific tactical action).
+- 🟢 **Safe:** 0 signals triggered (Action: Monitor normally).
+
+## 💻 Tech Stack
+
+- **Framework:** React + Vite
+- **Styling:** Vanilla CSS with custom CSS variables for theming and keyframe animations.
+- **Deployment:** GitHub Pages
+- **State Management:** React Hooks (`useState`, `useMemo`, `useEffect`) and `localStorage`.
+
+## 🛠️ Local Development
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AshritaPandey/Swym_dashboard.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd Swym_dashboard
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
